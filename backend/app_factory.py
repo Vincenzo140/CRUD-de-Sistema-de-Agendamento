@@ -1,12 +1,15 @@
 from flask import Flask
 from logger.logging import AppLogger
 from flask import Flask
-from models.agendamentoModels import db  # Certifique-se de que isso está correto
+from models.agendamentoModels import db  
+from flask_cors import CORS
+
 
 logger = AppLogger().get_logger()
 
 def create_app() -> Flask:
     app = Flask(__name__)
+    CORS(app) 
 
     # Configuração do banco de dados
     app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://user:senha@db/agendamento"

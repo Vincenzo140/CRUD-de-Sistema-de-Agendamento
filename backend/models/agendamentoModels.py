@@ -7,7 +7,6 @@ db = SQLAlchemy()
 class Agendamento(db.Model):
     __tablename__ = 'agendamentos'
 
-    # Mudando de String(36) para UUID
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, unique=True, nullable=False)
     data = db.Column(db.Date, nullable=False)
     horario = db.Column(db.Time, nullable=False)
