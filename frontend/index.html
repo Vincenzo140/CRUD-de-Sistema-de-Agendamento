@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Agendamentos</title>
+    <link rel="stylesheet" href="style.css">
+
+ 
+</head>
+<body>
+    <h1>Gerenciamento de Agendamentos</h1>
+    
+    <form id="agendamento-form">
+        <input type="hidden" id="agendamento-id">
+        <label>Data: <input type="date" id="data" required></label>
+        <label>Horário: <input type="time" id="horario" required></label>
+        <label>Cliente: <input type="text" id="cliente" required></label>
+        <label>Serviço: <input type="text" id="servico" required></label>
+        <button type="submit">Salvar</button>
+    </form>
+    
+    <h2>Lista de Agendamentos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Cliente</th>
+                <th>Serviço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="agendamentos-list"></tbody>
+    </table>
+
+</body>
+<script src="/frontend/script.js" defer></script>
+</html>
