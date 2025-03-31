@@ -1,0 +1,26 @@
+services:
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: flask-app
+    command: python main.py
+    ports:
+      - "8000:8000"
+    restart: always
+
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: agendamento
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: senha
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+    driver: local
